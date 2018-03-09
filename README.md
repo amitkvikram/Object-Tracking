@@ -1,6 +1,7 @@
 <h1 align = "middle">Object Tracking</h1>
+
 ### Aim
-Repo contains a notebook in which I have implemented object tracking. Goal track an object based on its colour information using library openCv.
+Repo contains a notebook in which I have implemented object tracking. Goal is to track an object based on its colour information using library openCv.
 
 ### Procedure
 First we will record a video, while recording we draw a rectangle around the object 
