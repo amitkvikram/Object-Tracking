@@ -1,18 +1,18 @@
 <h1 align = "middle">Object Tracking</h1>
 
 ### Aim
-Repo contains a notebook in which I have implemented object tracking. Goal is to track an object based on its colour information using library openCv.
+Repo contains a notebook in which I have implemented a basic object tracking model. Goal is to track an object based on its colour information using openCv.
 
 ### Procedure
 First we will record a video, while recording we draw a rectangle around the object 
-to be tracked using mouse. Then we press Esc key.After that a new window will open 
+to be tracked. Then we press Esc key.After that a new window will open 
 which will show the selected area. Then pressing Esc key closes current window and 
 Three new window will open. One window is current recording, window named "mask" is our created
 mask, third window named "Tracking" will show our tracking result.
 
 ### Theory
 
-* The feature which we will use for tracking is color informtion. 
+* The feature which we will use for tracking is color information. 
 * When we select the object to be tracked(we will call it as roi(region of interest)) it is in 
   BGR. First we convert roi from BGR to HSV colorspace. We will discuss later why we convert
   colorspace to hsv, till then think it same as BGR.
@@ -23,7 +23,7 @@ mask, third window named "Tracking" will show our tracking result.
                 lower_bound = (H_mean - H_std, S_mean - S_std, V_mean - V_std) and 
                 upper_bound = (H_mean + H_std, S_mean + S_std, V_mean + V_std)
 * Now to create mask we will use cv2.inRange function available in openCv library. cv2.inRange   function takes frame(current frame in video), lower_bound , upper_bound. It return an array 
-  of same size as frame in which a pixel value in 255 if correspondin pixel value in frame 
+  of same size as frame in which a pixel value in 255 if corresponding pixel value in frame 
   is in range [lower_bound,upper_bound] otherwise pixel value is zero.
 * After creating mask, to track the object we take bitwise_and of frame and mask. When we take 
   bitwise and of frame and mask in our ouput we will get pixel value 0 where pixel value of
