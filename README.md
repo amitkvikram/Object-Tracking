@@ -35,8 +35,8 @@ mask, third window named "Tracking" will show our tracking result.
 * Why we need to change colorspace from BGR to HSV(or YCrCb)
     * Problem with BGR is mixing of chrominance(Color related information) and luminance( 
       Intensity related information) data. Suppose you have an image of a single-color plane with a shadow on it. In RGB colorspace, the shadow part will most likely have very different characteristics than the part without shadows. In HSV colorspace, the hue component of both patches is more likely to be similar. Since we are tracking object based on its color(and intensity) information, we should be able to distinguish color information from luminance.
-    * In HSV three channel represents Hue(Primary Color or dominant wavelength), Saturation( shades of the color ) and value(intensity).So it separates the image intensity from the color information. Since we are trying to track object base on its color range this is really useful.YCrCb colorspace is also useful for same.
+    * In HSV three channel represents Hue(Primary Color or dominant wavelength), Saturation( shades of the color ) and value(intensity).So it separates the image intensity from the color information. Since we are trying to track object base on its color range this is really useful.YCrCb colorspace is also useful for same reason.
     
 ### Conclusion
-HSV and YCrCb both colorspace perform almost same. Also we don't see any significant improvement of changing BGR to HSV or YCrCb.
+HSV and YCrCb both colorspace perform almost same. 
  
